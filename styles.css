@@ -1,0 +1,36 @@
+body {
+    background-color: lightgrey;
+    text-align:center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+    margin:0;
+    padding:0;
+}
+
+header {
+    margin: 2em;
+}
+
+input[type=number] {
+    width: 3em;
+}
+
+body, a, input {
+    color: #1e1e1e;
+    font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+}
+
+.button, #res {
+    border: 1px solid #1e1e1e;
+    background-color: darkgrey;
+    padding: 0.5em;
+    border-radius: 0.25em;
+}
+
+#res {
+    margin: 1em;
+    padding: 1em;
+    text-align: left;
+}
