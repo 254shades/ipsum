@@ -4,8 +4,8 @@ function getRandomInt(min, max) {
 
 function prepLine(line, cap, clean) {
     var res = line.toLowerCase();
-    res = res.replace(" grey", "").replace(" gray", "");
-    if (clean) res = res.replace("cock", "critter");
+    res = res.replace(/ grey$/, "").replace(/ gray$/, "");
+    if (clean) res = res.replace(/\bcock\b/, "cockrel");
     if (cap) {
         return res.charAt(0).toUpperCase() + res.slice(1);
     } else {
@@ -13,9 +13,9 @@ function prepLine(line, cap, clean) {
     }
 }
 
-function generatePara(words, clean) {
-    var newSentence = true;
-    var str = "<p>";
+function generatePara(words, clean, isNotStart) {
+    var newSentence = !isNotStart;
+    var str = isNotStart ? "" : "<p>";
     var max = words.length;
     var last = false;
     var first = true;
@@ -55,9 +55,9 @@ function generatePara(words, clean) {
 function generateText(words) {
     $("#res").html("");
     var clean = $("#clean").is(":checked");
-    var str = "";
+    var str = "<p>Grey ipsum ";
     for (var i = 0; i < $("#count").val(); i++) {
-        str += generatePara(words, clean);
+        str += generatePara(words, clean, i==0);
     }
     if($("#html").is(":checked")) {
         $("#res").text(str);
